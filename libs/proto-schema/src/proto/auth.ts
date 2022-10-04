@@ -1,5 +1,6 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
+import { Observable } from "rxjs";
 
 export const protobufPackage = "aw.auth";
 
@@ -558,10 +559,10 @@ export const RefreshTokenResponse = {
 };
 
 export interface AccountService<Context extends DataLoaders> {
-  Create(ctx: Context, request: CreateRequest): Promise<CreateResponse>;
-  Login(ctx: Context, request: LoginRequest): Promise<LoginResponse>;
-  ValidateToken(ctx: Context, request: ValidateTokenRequest): Promise<ValidateTokenResponse>;
-  RefreshToken(ctx: Context, request: RefreshTokenRequest): Promise<RefreshTokenResponse>;
+  Create(ctx: Context, request: CreateRequest): Observable<CreateResponse>;
+  Login(ctx: Context, request: LoginRequest): Observable<LoginResponse>;
+  ValidateToken(ctx: Context, request: ValidateTokenRequest): Observable<ValidateTokenResponse>;
+  RefreshToken(ctx: Context, request: RefreshTokenRequest): Observable<RefreshTokenResponse>;
 }
 
 export interface DataLoaderOptions {
