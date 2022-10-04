@@ -4,21 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prot-build": "pnpm run --filter proto-schema build:proto",
+    "start:all:dev": "pnpm run --parallel -r start:dev",
+    "start:api:dev": "pnpm --filter api-gateway start:dev",
+    "start:account:dev": "pnpm --filter service-account start:dev???",
+    
+    "build-proto": "pnpm run --filter proto-schema build:proto",
+    "build-all": "npx nx run-many --target=build --all",
 
-    "pnpm-account-dev": "pnpm --filter service-account dev",
-    "pnpm-account-build": "pnpm --filter service-account build",
-    "pnpm-api-dev": "pnpm --filter api-gateway dev",
-    "pnpm-api-build": "pnpm --filter api-gateway build",
-    "pnpm-parallel-build": "pnpm run --parallel -r build",
-
-    "npx-affected-build": "npx nx affected:build",
-    "npx-account-build": "nx run service-account:build",
-    "npx-build-all": "nx run-many --target=build --all",
-    "npx-build-specify": " npx nx run-many --target=build --projects=api-gateway,service-account",
-    "graph": "npx nx graph",
-
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "graph": "npx nx graph"
   },
   "keywords": [],
   "author": "",

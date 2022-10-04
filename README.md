@@ -40,3 +40,4 @@ For example: >pnpm add --filter shared-ui typescript -D
 
 # Editing this README
 
+// pnpm add --filter api-gateway @nestjs/microservices
