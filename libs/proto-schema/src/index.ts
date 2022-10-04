@@ -1,1 +1,1 @@
-export * from './proto/auth';
+export * as Account from './proto/account';

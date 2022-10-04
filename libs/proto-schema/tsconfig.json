@@ -1,12 +1,25 @@
 {
 	"compilerOptions": {
-	  "allowJs": true,
-	  "esModuleInterop": true,
-	  "allowSyntheticDefaultImports": true,
-	  "module": "commonjs",
-	  "outDir": "./dist",
-	  "lib": ["es2020"],
+		"module": "commonjs",
+		"declaration": true,
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "es6",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"allowJs": true,
+		"baseUrl": "./",
+		"incremental": true,
+		"moduleResolution": "node",
 	},
-	"include": ["src/**/*.ts"],
-	"exclude": ["dist", "node_modules", "test", "**/*.spec.ts"]
-  }
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"dist",
+		"node_modules",
+		"test",
+		"**/*.spec.ts"
+	]
+}

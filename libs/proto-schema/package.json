@@ -3,8 +3,10 @@
   "name": "proto-schema",
   "description": "Contracts",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "src/index.ts",
   "scripts": {
-    "build:proto": "sh gen-ts.sh && nest build",
+    "build:proto": "sh gen-ts.sh && rm -rf dist && nest build && cp -R src/proto/ dist",
     "build": "rm -rf dist && tsc"
   },
   "keywords": [],
@@ -19,5 +21,8 @@
     "typescript": "^4.8.4",
     "ts-proto": "^1.126.1",
     "ts-protoc-gen": "^0.15.0"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
