@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "proto-schema",
+  "description": "Contracts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:proto": "sh gen-ts.sh",
+    "build": "rm -rf dist && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.21.0",
+    "protobufjs": "^7.1.2",
+    "ts-proto": "^1.126.1",
+    "ts-protoc-gen": "^0.15.0"
+  }
+}

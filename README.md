@@ -14,9 +14,16 @@ On Windows (using PowerShell):
 
 2. nx (https://nx.dev/getting-started/intro)
 > npm i -g nx
+> pnpm add nx -D -w
 
 3. nestjs
 > npm i -g @nestjs/cli
+
+## Run/add package/ an app
+1. Using pnpm
+> pnpm add --filter <app-name> <package-name>
+
+For example: >pnpm add --filter shared-ui typescript -D
 
 ## Add your files
 

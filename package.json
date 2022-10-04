@@ -4,9 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prot-build": "pnpm run --filter proto-schema build:proto",
+
+    "pnpm-account-dev": "pnpm --filter service-account dev",
+    "pnpm-account-build": "pnpm --filter service-account build",
+    "pnpm-api-dev": "pnpm --filter api-gateway dev",
+    "pnpm-api-build": "pnpm --filter api-gateway build",
+    "pnpm-parallel-build": "pnpm run --parallel -r build",
+
+    "npx-affected-build": "npx nx affected:build",
+    "npx-account-build": "nx run service-account:build",
+    "npx-build-all": "nx run-many --target=build --all",
+    "npx-build-specify": " npx nx run-many --target=build --projects=api-gateway,service-account",
+    "graph": "npx nx graph",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nx": "^14.8.2"
+  }
 }

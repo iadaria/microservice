@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+	  "allowJs": true,
+	  "esModuleInterop": true,
+	  "allowSyntheticDefaultImports": true,
+	  "module": "commonjs",
+	  "outDir": "./dist"
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": ["dist", "node_modules", "test", "**/*.spec.ts"]
+  }
