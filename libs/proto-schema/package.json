@@ -4,7 +4,7 @@
   "description": "Contracts",
   "main": "dist/index.js",
   "scripts": {
-    "build:proto": "sh gen-ts.sh",
+    "build:proto": "sh gen-ts.sh && nest build",
     "build": "rm -rf dist && tsc"
   },
   "keywords": [],

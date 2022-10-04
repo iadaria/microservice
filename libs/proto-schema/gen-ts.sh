@@ -15,7 +15,7 @@
 SRC_DIR="src/proto/*.proto"
 DEST_DIR="src"
 
-protoc --experimental_allow_proto3_optional --plugin=node_modules/ts-proto/protoc-gen-ts_proto --ts_proto_opt=nestJs=true --ts_proto_opt=addGrpcMetadata=true --ts_proto_out=../ --ts_proto_opt=useDate=true ${SRC_DIR}
+protoc --experimental_allow_proto3_optional --plugin=node_modules/ts-proto/protoc-gen-ts_proto --ts_proto_opt=outputEncodeMethods=true,useEnumNames=false,asClass=false,outputJsonMethods=true,context=true,outputNestJs=true,outputClientImpl=false --ts_proto_out=. ${SRC_DIR}
 
 # protobuf.js
 # node_modules/.bin/pbjs \
