@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build-libs": "pnpm run --filter proto-schema build",
+    "add-libs-account": "pnpm add proto-schema --filter service-account --workspace",
+    "add-libs-api": "pnpm add proto-schema --filter api-gateway --workspace",
+    "build-account": "pnpm --filter service-account build",
+    "build-api": "pnpm --filter api-gateway build",
+    "start-all": "pnpm run --parallel -r start:prod",
+
+
     "start:all:dev": "pnpm run --parallel -r start:dev",
     "start:api:dev": "pnpm --filter api-gateway start:dev",
     "start:account:dev": "pnpm --filter service-account start:dev???",
-
-    "clean": "pnpm store prune && nx reset cache --force",
     
-    "build-proto": "pnpm run --filter proto-schema build",
+    "clean": "pnpm store prune && nx reset cache --force",
+
     "build-all": "npx nx run-many --target=build --all",
 
     "graph": "npx nx graph"

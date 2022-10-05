@@ -173,12 +173,6 @@ importers:
       ts-protoc-gen: 0.15.0
       typescript: 4.8.4
 
-  libs/repository:
-    specifiers:
-      typescript: ^4.8.4
-    devDependencies:
-      typescript: 4.8.4
-
 packages:
 
   /@ampproject/remapping/2.2.0:

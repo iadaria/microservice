@@ -19,6 +19,10 @@ On Windows (using PowerShell):
 3. nestjs
 > npm i -g @nestjs/cli
 
+## Start project
+
+> pnpm install
+
 ## Run/add package/ an app
 1. Using pnpm
 > pnpm add --filter <app-name> <package-name>
@@ -62,3 +66,14 @@ https://pnpm.io/cli/add
 # How add proto to nestjs
 
 https://www.npmjs.com/package/nestjs-proto-gen-ts
+
+# Errro npm after deleting node_modules
+
+> npm installl
+
+ Virtual store is at:             node_modules/.pnpm
+ ENOENT  ENOENT: no such file or directory, copyfile '/Users/daria/Library/pnpm/store/v3/files/e6/0f3b9e5ad261cc15b8c65570c743d820cad07be9438e7d2458ea1a6776beb3394b42a337e26d3a241306f1ddc5483c50499f5c2bf966363f6ae16512fad9bf-exec' -> '/Users/daria/Documents/work/WalletTwo/amir-wallet-2/node_modules/.pnpm/@parcel+watcher@2.0.4/node_modules/@parcel/_tmp_33134_be65a1380ed6aa6504ed2856a8e8fdda/node_modules/.bin/node-gyp-build
+
+I fixed it by deleting the store folder
+> pnpm store path
+>run rm -rf

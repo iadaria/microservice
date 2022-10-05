@@ -3,7 +3,6 @@
   "name": "proto-schema",
   "description": "Contracts",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsproto --path src/proto && rm -rf dist && tsc && cp -R src/proto/ dist/proto",
     "gen": "sh gen-ts.sh",
