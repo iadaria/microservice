@@ -1,13 +1,3 @@
-# .gitignore
-node_modules
-dist
-build
-
-.screenshots
-.notes
-dist
-.idea
-
 # compiled output
 /dist
 /node_modules
