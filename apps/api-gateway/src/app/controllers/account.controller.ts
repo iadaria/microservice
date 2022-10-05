@@ -1,7 +1,7 @@
 import { Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { account as Account } from 'proto-schema';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 
 type INewUser = {
   id?: string;
@@ -9,7 +9,8 @@ type INewUser = {
   isBlocked?: boolean;
 }
 
-@Controller()
+
+@Controller('account')
 export class AccountController implements OnModuleInit {
   private account: Account.AccountService;
 
@@ -20,8 +21,9 @@ export class AccountController implements OnModuleInit {
   }
 
   @Post('create')
-  createUser(): Observable<INewUser> {
-    return this.account.create({ email: 'email', password: 'password' })
+  createUser(dto) {
+    console.log('***', dto);
+    return firstValueFrom(this.account.create({ email: 'email', password: 'password' }));
   }
 
   @Post('login')
