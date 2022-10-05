@@ -1,7 +1,6 @@
 syntax = "proto3";
-package aw.account;
 
-import "google/protobuf/timestamp.proto";
+package account;
 
 service AccountService {
   rpc Create(CreateRequest) returns (CreateResponse) {}

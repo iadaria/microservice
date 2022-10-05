@@ -41,3 +41,24 @@ For example: >pnpm add --filter shared-ui typescript -D
 # Editing this README
 
 // pnpm add --filter api-gateway @nestjs/microservices
+
+Adding a new package only through pnpm:
+ > pnpm add --filter <name-app> <napme-package>
+For example:
+ > pnpm add --filter proto-schema rxjs googole-protobuf
+
+Start command: ❯ pnpm --filter <package-name> <command>
+For Example: 
+> pnpm --filter proto-schema build
+
+Adding an app to the other app as package: ❯ pnpm add proto-schema --filter service-account --workspace
+
+pnpm add : Installs a package and any packages that it depends on.
+pnpm install : is used to install all dependencies for a project.
+
+https://pnpm.io/cli/install 
+https://pnpm.io/cli/add
+
+# How add proto to nestjs
+
+https://www.npmjs.com/package/nestjs-proto-gen-ts

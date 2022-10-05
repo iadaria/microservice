@@ -4,23 +4,25 @@
   "description": "Contracts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "src/index.ts",
   "scripts": {
-    "build:proto": "sh gen-ts.sh && rm -rf dist && nest build && cp -R src/proto/ dist",
-    "build": "rm -rf dist && tsc"
+    "build": "tsproto --path src/proto && rm -rf dist && tsc && cp -R src/proto/ dist/proto",
+    "gen": "sh gen-ts.sh",
+    "build-ts": "rm -rf dist && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@grpc/grpc-js": "^1.7.1",
     "google-protobuf": "^3.21.0",
     "protobufjs": "^7.1.2",
     "rxjs": "^7.2.0"
   },
   "devDependencies": {
-    "typescript": "^4.8.4",
+    "nestjs-proto-gen-ts": "^1.0.20",
     "ts-proto": "^1.126.1",
-    "ts-protoc-gen": "^0.15.0"
+    "ts-protoc-gen": "^0.15.0",
+    "typescript": "^4.8.4"
   },
   "files": [
     "dist"

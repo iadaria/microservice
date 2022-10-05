@@ -7,8 +7,10 @@
     "start:all:dev": "pnpm run --parallel -r start:dev",
     "start:api:dev": "pnpm --filter api-gateway start:dev",
     "start:account:dev": "pnpm --filter service-account start:dev???",
+
+    "clean": "pnpm store prune && nx reset cache --force",
     
-    "build-proto": "pnpm run --filter proto-schema build:proto",
+    "build-proto": "pnpm run --filter proto-schema build",
     "build-all": "npx nx run-many --target=build --all",
 
     "graph": "npx nx graph"
