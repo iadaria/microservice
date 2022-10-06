@@ -1,10 +1,11 @@
 import { User } from './../user/entities/user.entities';
-import { Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { account as Account } from 'proto-schema';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { DoneResponse, FailResponse, Response } from '../common/response.dto'
+import { RpcException } from '@nestjs/microservices';
 
 
 @Injectable()
@@ -18,7 +19,10 @@ export class AuthService {
 			const exists = await this.userRepository.findOne({ where: { email } });
 			if (exists) {
 				// TODO Error
-				throw new Error('There is a user with that email already');
+				throw new RpcException({
+					code: HttpStatus.BAD_REQUEST,
+					message: JSON.stringify('There is a user with that email already') // note here (payload is stringified)
+				});
 			}
 			const newUser = await this.userRepository.create({ email, password });
 			await this.userRepository.save(newUser)
