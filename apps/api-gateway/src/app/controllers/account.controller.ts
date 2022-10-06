@@ -1,4 +1,4 @@
-import { Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
+import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
 import { account as Account } from 'proto-schema';
 import { firstValueFrom, Observable } from 'rxjs';
@@ -14,13 +14,16 @@ export class AccountController implements OnModuleInit {
   }
 
   @Post('register')
-  register(dto) {
-    console.log('***', dto);
-    return firstValueFrom(this.account.register({ email: 'email', password: 'password' }));
+  register(@Body() dto: { email: string, password: string }) {
+    try {
+      return firstValueFrom(this.account.register(dto));
+    } catch (error) {
+      return { ok: false, error }
+    }
   }
 
   @Post('login')
-  login(): Observable<any> {
-    return this.account.login({ email: 'email', password: 'password' });
+  login(@Body() dto: { email: string, password: string }) {
+    return this.account.login(dto);
   }
 }

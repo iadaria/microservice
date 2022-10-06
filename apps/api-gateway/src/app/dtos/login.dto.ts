@@ -14,11 +14,11 @@ export class LoginOutput {
 	@Field((type) => String, { nullable: true })
 	token?: string;
 
-	@Field((type) => String, { nullable: true })
+	/* @Field((type) => String, { nullable: true })
 	refreshToken?: string;
 
 	@Field((type) => Number, { nullable: true })
-	expiresIn?: number;
+	expiresIn?: number; */
 
 	@Field((type) => String, { nullable: true })
 	error?: string;

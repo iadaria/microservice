@@ -13,7 +13,7 @@ const protoModule = require.resolve('proto-schema');
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, envFilePath: 'src/environments/.api.env' }),
-    GraphQLModule.forRoot<ApolloDriverConfig>(getGraphQL()),
+    //GraphQLModule.forRoot<ApolloDriverConfig>(getGraphQL()),
     ClientsModule.register([
       {
         name: 'AUTH_PACKAGE',
@@ -25,6 +25,6 @@ const protoModule = require.resolve('proto-schema');
       },
     ]),],
   controllers: [AccountController],
-  providers: [AccountResolver],
+  providers: [/* AccountResolver */],
 })
 export class AppModule { }
