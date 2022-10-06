@@ -1,16 +1,19 @@
-import { lastValueFrom, Observable, of } from 'rxjs';
+import { from, lastValueFrom, Observable, of } from 'rxjs';
 import { Metadata } from '@grpc/grpc-js';
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import { account as Account } from 'proto-schema';
+import { AuthService } from './auth.service';
 
 @Controller()
 export class AuthController implements Account.AccountService {
+  constructor(
+    private readonly authService: AuthService
+  ) { }
 
-  @GrpcMethod('AccountService', 'Create')
-  create(dto: Account.CreateRequest, meta: Metadata): Observable<Account.CreateResponse> {
-    console.log('GRPC', dto);
-    return of({ id: 'id', email: dto.email, isBlicked: false });
+  @GrpcMethod('AccountService', 'Register')
+  register(dto: Account.RegisterRequest, meta: Metadata): Observable<Account.RegisterResponse> {
+    return from(this.authService.register(dto));
   }
 
   @GrpcMethod('AccountService', 'Login')

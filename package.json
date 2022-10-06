@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build-libs": "pnpm run --filter proto-schema build",
-    "add-libs-account": "pnpm add proto-schema --filter service-account --workspace",
+    "add-libs": "pnpm add proto-schema --filter service-account --workspace && pnpm add proto-schema --filter api-gateway --workspace",
     "add-libs-api": "pnpm add proto-schema --filter api-gateway --workspace",
     "build-account": "pnpm --filter service-account build",
     "build-api": "pnpm --filter api-gateway build",
-    "start-all": "pnpm run --parallel -r start:prod",
+
+    "start-all": "pnpm run --parallel -r start:dev",
+    "start-all-prod": "pnpm run --parallel -r start:prod",
 
 
     "start:all:dev": "pnpm run --parallel -r start:dev",

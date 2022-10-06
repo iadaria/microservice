@@ -7,17 +7,17 @@ import { Metadata } from '@grpc/grpc-js';
 
 export namespace account {
     export interface AccountService {
-        create(data: CreateRequest, metadata?: Metadata): Observable<CreateResponse>;
+        register(data: RegisterRequest, metadata?: Metadata): Observable<RegisterResponse>;
         login(data: LoginRequest, metadata?: Metadata): Observable<LoginResponse>;
         validateToken(data: ValidateTokenRequest, metadata?: Metadata): Observable<ValidateTokenResponse>;
         refreshToken(data: RefreshTokenRequest, metadata?: Metadata): Observable<RefreshTokenResponse>;
     }
-    export interface CreateRequest {
+    export interface RegisterRequest {
         email?: string;
         // some random string containing password
         password?: string;
     }
-    export interface CreateResponse {
+    export interface RegisterResponse {
         id?: string;
         email?: string;
         isBlocked?: boolean;

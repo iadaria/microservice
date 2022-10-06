@@ -30,6 +30,8 @@
     "@nestjs/microservices": "^9.1.2",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/typeorm": "^9.0.1",
+    "@types/bcrypt": "^5.0.0",
+    "bcrypt": "^5.0.1",
     "pg": "^8.8.0",
     "proto-schema": "workspace:*",
     "reflect-metadata": "^0.1.13",

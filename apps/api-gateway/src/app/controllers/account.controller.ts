@@ -3,13 +3,6 @@ import { ClientGrpc } from '@nestjs/microservices';
 import { account as Account } from 'proto-schema';
 import { firstValueFrom, Observable } from 'rxjs';
 
-type INewUser = {
-  id?: string;
-  email?: string;
-  isBlocked?: boolean;
-}
-
-
 @Controller('account')
 export class AccountController implements OnModuleInit {
   private account: Account.AccountService;
@@ -20,10 +13,10 @@ export class AccountController implements OnModuleInit {
     this.account = this.client.getService<Account.AccountService>('AccountService');
   }
 
-  @Post('create')
-  createUser(dto) {
+  @Post('register')
+  register(dto) {
     console.log('***', dto);
-    return firstValueFrom(this.account.create({ email: 'email', password: 'password' }));
+    return firstValueFrom(this.account.register({ email: 'email', password: 'password' }));
   }
 
   @Post('login')

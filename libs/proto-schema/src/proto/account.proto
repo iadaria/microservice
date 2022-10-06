@@ -3,18 +3,18 @@ syntax = "proto3";
 package account;
 
 service AccountService {
-  rpc Create(CreateRequest) returns (CreateResponse) {}
+  rpc Register(RegisterRequest) returns (RegisterResponse) {}
   rpc Login(LoginRequest) returns (LoginResponse) {}
   rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse) {}
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {}
 }
 
-message CreateRequest {
+message RegisterRequest {
   string email = 1;
   string password = 2; // some random string containing password
 }
 
-message CreateResponse {
+message RegisterResponse {
   string id = 1;
   string email = 2;
   bool isBlocked = 3;
